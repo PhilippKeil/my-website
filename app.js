@@ -1,10 +1,14 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+var routes = require(path.join(__dirname, 'routes'));
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
+app.set('port', 8080)
+
+app.get('/', routes.index);
+app.get('/about', routes.about);
+
+app.listen(app.get('port'), function () {
+  console.log('Example app listening on port ' + app.get('port') + '!');
 });
