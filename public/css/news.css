@@ -1,7 +1,11 @@
 .article-description {
   display: none;
 }
-.panel-default .active-article{
+.panel-default .active-article {
   background-color: #337ab7;
   color: white;
+}
+
+.panel-default .hover {
+  background-color: #eee;
 }
