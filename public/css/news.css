@@ -1,9 +1,3 @@
-.article {
-  background-color: grey;
-}
-.item {
-  color: white;
-}
-.description {
-  background-color: AntiqueWhite;
+.article-description {
+  display: none;
 }
