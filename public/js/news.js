@@ -12,12 +12,12 @@ var main = function() {
       $(this).addClass('active-article');
 
       //make it the only visible description
-      $('.article-description').hide();
-      $(this).next('.article-description').show();
+      $('.article-description').hide('slow');
+      $(this).next('.article-description').show('slow');
     }
     else {
       $('.article-title').removeClass('active-article');
-      $('.article-description').hide();
+      $('.article-description').hide('slow');
     };
   });
 
