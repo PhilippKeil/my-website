@@ -23,6 +23,12 @@ app.get('/about', function(req, res) {
   console.log('GET request to /about')
 });
 
+//newsreader
+app.get('/news', function(req, res) {
+  res.sendFile(path.join(app.get('views'), 'news.html'));
+  console.log('GET request to /news')
+});
+
 //404
 app.get('*', function(req, res) {
   res.send('LUL WHERE YOU AT BRAH?');
