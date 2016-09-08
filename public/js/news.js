@@ -1,5 +1,4 @@
 var main = function() {
-  console.log('news script loaded');
   $('.article-title').click(function() {
     //Click on a article title reveals description or hides it if its already open
     if ($(this).next('.article-description').css('display') == 'none') {
@@ -21,15 +20,27 @@ var main = function() {
       $('.article-description').hide();
     };
   });
+
   $('.article-title').hover(function() {
     //mouse goes IN
     if ($(this).hasClass('active-article') == false) {
       $(this).addClass('hover');
-      console.log('hover event');
     }
   }, function() {
     //mouse goes OUT
     $(this).removeClass('hover');
+  });
+
+  $('.article-description').hover(function() {
+    //mouse goes IN
+    $(this).addClass('hover');
+  }, function() {
+    //mouse goes OUT
+    $(this).removeClass('hover');
+  });
+
+  $('.article-description').click(function() {
+    window.location.href = $(this).attr('data-news-url');
   });
 };
 
