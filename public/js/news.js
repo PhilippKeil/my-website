@@ -8,24 +8,30 @@ var main = function() {
       $(this).removeClass('hover');
 
       //make it the only active article
-      $('.article-title').removeClass('active-article');
-      $(this).addClass('active-article');
+      $('.article').removeClass('active-article');
+      $(this).parent('.article').addClass('active-article');
 
       //make it the only visible description
       $('.article-description').hide('slow');
       $(this).next('.article-description').show('slow');
     }
     else {
-      $('.article-title').removeClass('active-article');
+      $('.article').removeClass('active-article');
       $('.article-description').hide('slow');
     };
   });
 
   $('.article-title').hover(function() {
-    //mouse goes IN
+    // mouse goes IN
+
+    // old method. Used that the article-title wouldnt recolor on hover, because
+    // it used to have an other color that the rest of the articles.
+    /*
     if ($(this).hasClass('active-article') == false) {
       $(this).addClass('hover');
     }
+    */
+    $(this).addClass('hover');
   }, function() {
     //mouse goes OUT
     $(this).removeClass('hover');
