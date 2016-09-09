@@ -6,6 +6,12 @@ body {
   padding-top: 50px; /* needed because navbar-fixed-top doesn't move container*/
 }
 
+h1, h3, .navbar-brand{
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+}
+
 .navbar-inverse {
   background:#222B31 !important;
   border-bottom:4px solid #EE445F !important;
@@ -13,9 +19,6 @@ body {
 
 .navbar-inverse .navbar-brand {
   color: #FFF;
-  font-weight: 900;
-  text-transform:uppercase;
-  letter-spacing:2px;
 }
 
 .nav {

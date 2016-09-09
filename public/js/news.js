@@ -1,10 +1,9 @@
 var main = function() {
   $('.article-title').click(function() {
+    $('.article').removeClass('active-article');
     // click on a article title reveals description or hides it if its already open
     if ($(this).next('.article-description').css('display') == 'none') {
-      // description is not already open
-      // make it the only active article
-      $('.article').removeClass('active-article');
+      // --> description is not already open
       $(this).parent('.article').addClass('active-article');
 
       // make it the only visible description
@@ -12,7 +11,6 @@ var main = function() {
       $(this).next('.article-description').show('slow');
     }
     else {
-      $('.article').removeClass('active-article');
       $('.article-description').hide('slow');
     };
   });
