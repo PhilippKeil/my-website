@@ -34,22 +34,26 @@ body {
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+.square.top-left {
   background: #151515;
   top: -50%;
   left: -20%;
   z-index: 3;
 }
+.square.top-right {
   background: #fff;
   height: 200%;
   right: -50%;
   top: -130%;
   z-index: 5;
 }
+.square.btm-right {
   background: #e5e2d9;
   right: -20%;
   bottom: -50%;
   z-index: 4;
 }
+.square.btm-left {
   background: #858484;
   height: 200%;
   left: -50%;
