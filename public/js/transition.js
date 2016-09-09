@@ -3,19 +3,36 @@ config.window = $(window);
 config.wWidth = config.window.width();
 config.wHeight = config.window.height();
 
-config.t = 1;
-config.t2 = 3;
-config.e = Power2.easeOut;
-config.e2 = Power2.easeIn;
+config.t_lft_rght = 0.55;
+config.t_top_btm = 0.55;
+config.t_start_top_btm = 0.275;
+config.t_wait_left_rght = 0.275;
+config.rotation = 20;
 
-config.pageTrans = new TimelineMax({repeat:-1, repeatDelay: 0, yoyo:true});
+config.pageTrans = new TimelineMax({repeat:-1, repeatDelay: 1, yoyo:false});
 
 config.pageTrans
-.fromTo('.top-right',config.t, { x: config.wWidth/2 }, { x: 0, ease: config.e}, "f")
-.fromTo('.btm-left',config.t, { x: -config.wWidth/2 }, { x: 0, ease: config.e}, "f")
-.fromTo('.top-left',config.t, { y: -config.wHeight }, { y: 0, ease: config.e}, "f")
-.fromTo('.btm-right',config.t, { y: config.wHeight }, { y: 0, ease: config.e}, "f")
-.fromTo('.btm-left', config.t2, { y: 0 }, { y: -config.wHeight/2, ease: config.e2}, "f+=.8")
-.fromTo('.top-right', config.t2, { y: 0 }, { y: config.wHeight/2, ease: config.e2}, "f+=.8")
-.fromTo('#pagetransition', 2.5, { rotation: 0 }, { rotation: 10, ease: config.e}, "f")
-.fromTo('.vic-gb', .8, { rotation: 0, scale: 0 }, { rotation: -10, scale: 1, ease: Back.easeOut}, "f+=.6")
+// panel CLOSE
+.fromTo('.btm-left',config.t_lft_rght, { x: -config.wWidth/2 }, { x: 0, ease: Power2.easeOut}, "f")
+.fromTo('.top-right',config.t_lft_rght, { x: config.wWidth/2 }, { x: 0, ease: Power2.easeOut}, "f")
+.fromTo('.top-left',config.t_lft_rght, { y: -config.wHeight }, { y: 0, ease: Power2.easeOut}, "f")
+.fromTo('.btm-right',config.t_lft_rght, { y: config.wHeight }, { y: 0, ease: Power2.easeOut}, "f")
+
+// panel diverge top, bottom
+.fromTo('.btm-left', config.t_top_btm, { y: 0 }, { y: -config.wHeight/2, ease: Power2.easeIn}, "f+=" + config.t_start_top_btm)
+.fromTo('.top-right', config.t_top_btm, { y: 0 }, { y: config.wHeight/2, ease: Power2.easeIn}, "f+=" + config.t_start_top_btm)
+
+// rotation
+.fromTo('#pagetransition', (config.t_start_top_btm + config.t_top_btm), { rotation: 0 }, { rotation: config.rotation, ease: Power2.easeOut}, "f")
+
+// panel OPEN
+.fromTo('.btm-left',config.t_lft_rght, { x: 0 }, { x: -config.wWidth/2, ease: Power2.easeIn}, "f+=" + (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
+.fromTo('.top-right',config.t_lft_rght, { x: 0 }, { x: config.wWidth/2, ease: Power2.easeIn}, "f+="+ (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
+.fromTo('.top-left',config.t_lft_rght, { y: 0 }, { y: -config.wHeight, ease: Power2.easeIn}, "f+="+ (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
+.fromTo('.btm-right',config.t_lft_rght, { y: 0 }, { y: config.wHeight, ease: Power2.easeIn}, "f+="+ (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
+// logo
+.fromTo('.brand-logo', config.t_lft_rght, { rotation: 0, scale: 0 }, { rotation: -config.rotation, scale: 1, ease: Back.easeOut}, "f")
+.fromTo('.brand-logo', config.t_lft_rght, { rotation: -config.rotation, scale: 1 }, { rotation: 0, scale: 0, ease: Back.easeIn}, "f+=" + (config.t_start_top_btm + config.t_top_btm))
+
+// 110 BPM ---> 0.55sec
+// 0.55 / 1.1 / 1.65
