@@ -1,6 +1,3 @@
-body {
-  color:#FFF !important;
-}
 #headline {
   margin-bottom: 30px;
 }
@@ -47,6 +44,9 @@ textarea.form-control {
 /* INTERACTIONS */
 .article.active-article {
   border-color: #EE445F;
+}
+.active-article > .panel-heading {
+  background-color: #192226;
 }
 
 .panel > .hover {

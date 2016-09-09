@@ -1,17 +1,13 @@
 var main = function() {
   $('.article-title').click(function() {
-    //Click on a article title reveals description or hides it if its already open
+    // click on a article title reveals description or hides it if its already open
     if ($(this).next('.article-description').css('display') == 'none') {
-      //description is not already open
-
-      //remove .hover early
-      $(this).removeClass('hover');
-
-      //make it the only active article
+      // description is not already open
+      // make it the only active article
       $('.article').removeClass('active-article');
       $(this).parent('.article').addClass('active-article');
 
-      //make it the only visible description
+      // make it the only visible description
       $('.article-description').hide('slow');
       $(this).next('.article-description').show('slow');
     }
@@ -33,15 +29,15 @@ var main = function() {
     */
     $(this).addClass('hover');
   }, function() {
-    //mouse goes OUT
+    // mouse goes OUT
     $(this).removeClass('hover');
   });
 
   $('.article-description').hover(function() {
-    //mouse goes IN
+    // mouse goes IN
     $(this).addClass('hover');
   }, function() {
-    //mouse goes OUT
+    // mouse goes OUT
     $(this).removeClass('hover');
   });
 
