@@ -1,19 +1,15 @@
 var config = {};
-config.window = $(document);
+config.window = $(window);
 config.wWidth = config.window.width();
 config.wHeight = config.window.height();
 
-config.t_lft_rght = 5.5; // 0.55
-config.t_top_btm = 5.5; // 0.55
-config.t_start_top_btm = 2.75; // 0.275
-config.t_wait_left_rght = 2.75; // 0.275
-config.rotation = 0;
-
-// config.rotation_offset = Math.sqrt(Math.pow(config.wWidth/2, 2) + Math.pow(config.wHeight/2, 2)) - config.wWidth/2;
-config.rotation_offset = 0;
-console.log('width ' + config.wWidth);
-console.log('height ' + config.wHeight);
-console.log(config.rotation_offset);
+config.fac = 1.5;
+config.t_lft_rght = 0.55*config.fac;
+config.t_top_btm = 0.55*config.fac;
+config.t_start_top_btm = 0.275*config.fac;
+config.t_wait_left_rght = 0.275*config.fac;
+config.rotation = 10; // 0 - 32 makes sense
+config.offset = 150; // moves left and right element further to their side. needed because rotation causes the elements to be not moved far enough.
 
 config.pageTrans = new TimelineMax({repeat:-1, repeatDelay: 1, yoyo:false});
 
@@ -24,21 +20,21 @@ config.pageTrans
 .fromTo('.top-left',config.t_lft_rght, { y: -config.wHeight }, { y: 0, ease: Power2.easeOut}, "f")
 .fromTo('.btm-right',config.t_lft_rght, { y: config.wHeight }, { y: 0, ease: Power2.easeOut}, "f")
 
-// panel diverge top, bottom
+// panel DIVERGE
 .fromTo('.btm-left', config.t_top_btm, { y: 0 }, { y: -config.wHeight/2, ease: Power2.easeIn}, "f+=" + config.t_start_top_btm)
 .fromTo('.top-right', config.t_top_btm, { y: 0 }, { y: config.wHeight/2, ease: Power2.easeIn}, "f+=" + config.t_start_top_btm)
 
-// rotation
+// ROTATION
 .fromTo('#pagetransition', (config.t_start_top_btm + config.t_top_btm), { rotation: 0 }, { rotation: config.rotation, ease: Power2.easeOut}, "f")
 
 // panel OPEN
-.fromTo('.btm-left',config.t_lft_rght, { x: 0 }, { x: -config.wWidth/2 - config.rotation_offset, ease: Power2.easeIn}, "f+=" + (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
-.fromTo('.top-right',config.t_lft_rght, { x: 0 }, { x: config.wWidth/2 + config.rotation_offset, ease: Power2.easeIn}, "f+="+ (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
-.fromTo('.top-left',config.t_lft_rght, { y: 0 }, { y: -config.wHeight + config.rotation_offset, ease: Power2.easeIn}, "f+="+ (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
-.fromTo('.btm-right',config.t_lft_rght, { y: 0 }, { y: config.wHeight - config.rotation_offset, ease: Power2.easeIn}, "f+="+ (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
-// logo
+.fromTo('.btm-left',config.t_lft_rght, { x: 0 }, { x: -config.wWidth/2 - config.offset, ease: Power2.easeIn}, "f+=" + (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
+.fromTo('.top-right',config.t_lft_rght, { x: 0 }, { x: config.wWidth/2 + config.offset, ease: Power2.easeIn}, "f+="+ (config.t_start_top_btm + config.t_top_btm + config.t_wait_left_rght))
+
+// panel VANISH
+.to('.top-left', 0, {opacity: 0}, 'f+=' + (config.t_start_top_btm + config.t_top_btm))
+.to('.btm-right', 0, {opacity: 0}, 'f+=' + (config.t_start_top_btm + config.t_top_btm))
+
+// logo POP
 .fromTo('.brand-logo', config.t_lft_rght, { rotation: 0, scale: 0 }, { rotation: -config.rotation, scale: 1, ease: Back.easeOut}, "f")
 .fromTo('.brand-logo', config.t_lft_rght, { rotation: -config.rotation, scale: 1 }, { rotation: 0, scale: 0, ease: Back.easeIn}, "f+=" + (config.t_start_top_btm + config.t_top_btm))
-
-// 110 BPM ---> 0.55sec
-// 0.55 / 1.1 / 1.65
