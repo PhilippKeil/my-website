@@ -9,7 +9,7 @@ config.t_top_btm = 0.55*config.fac;
 config.t_start_top_btm = 0.275*config.fac;
 config.t_wait_left_rght = 0.275*config.fac;
 config.rotation = 10; // 0 - 32 makes sense
-config.offset = 150; // moves left and right element further to their side. needed because rotation causes the elements to be not moved far enough.
+config.offset = 160; // moves left and right element further to their side. needed because rotation causes the elements to be not moved far enough.
 
 config.pageTrans = new TimelineMax({repeat:-1, repeatDelay: 1, yoyo:false});
 
