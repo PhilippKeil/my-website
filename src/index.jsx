@@ -5,26 +5,17 @@ import { render } from 'react-dom';
 // import routing modules
 import {Router, Route, browserHistory} from 'react-router';
 
-// use ES6 classes for creation of react components
-// it's often done with React.createClass({}), but this is best practice.
-class Home extends Component {
-    render(){
-        return (<h1>Home</h1>);
-    }
-}
-
-class Newsreader extends Component {
-  render () {
-    return (
-      <h1>Newsreader</h1>
-    );
-  }
-}
+// import react components
+import Main from './common/main.component.jsx';
+import Home from './common/home.component.jsx';
+import News from './common/news.component.jsx';
 
 render(
   <Router history={browserHistory}>
-    <Route path="/" component={Home}/>
-    <Route path="/news" component={Newsreader}/>
+    <Route component={Main}>
+      <Route path="/" component={Home}/>
+      <Route path="/news" component={News}/>
+    </Route>
   </Router>,
   document.getElementById('container')
 );
