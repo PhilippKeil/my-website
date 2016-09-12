@@ -20,13 +20,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // static file middleware for html files. File structure inside views/ is the
 // same as the URL after the TLD.
 app.use(express.static(path.join(__dirname, 'views')));
-// if no other middleware above could serve the request, it will get served by
-// the error handler.
-app.use('*', function(req, res, next) {
-  console.log('ERR on ' + req.originalUrl);
-  // needs proper 404 page!!
-  res.send('LUL WHERE YOU AT BRAH?');
-});
+// wildcard route for react-router, because in index.html -> bundle.js is the
+// code for routing. Because the files can't be served by express.static, this
+// is neccessary.
+app.get('*', function (request, response){
+    response.sendFile(path.resolve(__dirname, 'views', 'index.html'))
+})
 // let the server listen to the port defined at the beginning. It is configured
 // to be behind an NGINX reverse proxy going out at port 80. Express shouldn't
 // be exposed to the internet.
