@@ -28,6 +28,7 @@ class Main extends Component {
               </div>
             </nav>
             <div className="container">
+            {/* children components are spawned here! */}
               {this.props.children}
             </div>
           </div>
