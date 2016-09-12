@@ -1,0 +1,93 @@
+body {
+  background-color: #192226 !important;
+  font-family: Lato, serif;
+  font-size: 14px;
+  color: #FFF !important;
+  padding-top: 50px; /* needed because navbar-fixed-top doesn't move container*/
+}
+
+h1, h3, .navbar-brand{
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+}
+
+.navbar-inverse {
+  background:#222B31 !important;
+  border-bottom:4px solid #EE445F !important;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #FFF;
+}
+
+.nav {
+  margin-bottom: 0px;
+}
+
+.nav li {
+  position:relative;
+}
+
+.navbar-nav > li > a {
+  letter-spacing:2px;
+  padding:16px !important;
+  color:#a3bfc6 !important;
+  text-transform:uppercase;
+  position:relative;
+  z-index:1000;
+}
+.navbar-nav > li > a:hover {
+  color:#FFF !important;
+}
+
+.navbar-inverse .navbar-toggle {
+  border:none;
+}
+
+.navbar-collapse {
+  box-shadow:none !important;
+  border:none !important;
+}
+.navbar-inverse .navbar-toggle:hover {
+  background:transparent !important;
+}
+
+.navbar-inverse .navbar-toggle:focus {
+  background:transparent !important;
+}
+
+.navbar-inverse .navbar-toggle:active {
+  background:transparent !important;
+}
+
+.icon-bar {
+  background:#a3bfc6 !important;
+}
+
+.nav span.hover {
+  display:block;
+  position:absolute;
+  width:0%;
+  height:100%;
+  top:0px;
+  left:0px;
+  background-color: #EE445F !important;
+  z-index:0;
+  opacity:0;
+}
+
+@media (max-width: 767px) {
+.nav {
+  padding-bottom:20px;
+  a{
+    padding:12px !important;
+  }
+}
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding-bottom:20px;
+  }
+}

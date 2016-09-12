@@ -15,6 +15,8 @@ render(
     <Route component={Main}>
       <Route path="/" component={Home}/>
       <Route path="/news" component={News}/>
+      <Route path="/portfolio"/>
+      <Route path="/contact"/>
     </Route>
   </Router>,
   document.getElementById('container')
