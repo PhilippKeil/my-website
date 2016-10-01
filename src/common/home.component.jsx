@@ -10,14 +10,6 @@ class Home extends Component {
       </div>
     );
   }
-  componentWillMount(){
-    test = 1;
-    console.log('Home component will mount')
-  };
-  componentDidMount(){
-    test = 2;
-    console.log('Home component did mount')
-  };
 }
 
 export default Home;

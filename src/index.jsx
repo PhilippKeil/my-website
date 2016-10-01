@@ -32,14 +32,3 @@ render(
   </Router>,
   document.getElementById('container')
 );
-
-/*
-<Router history={history}>
-  <IndexRoute component={Main}>
-    <Route path="/" component={Home}/>
-    <Route path="/news" component={News}/>
-    <Route path="/About" component={About}/>
-    <Route path="/contact"/>
-  </Route>
-</Router>
-*/

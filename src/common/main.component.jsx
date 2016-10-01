@@ -40,18 +40,8 @@ class Main extends Component {
             key: location.pathname
           })}
         </ReactCSSTransitionGroup>
-        {/*<div className="container" id="content_container">
-          {// children components are spawned here! }
-          {this.props.children}
-        </div>*/}
       </div>
     );
-  }
-  componentWillMount() {
-    console.log('main will mount');
-  }
-  componentDidMount() {
-    console.log('main did mount');
   }
 }
 
