@@ -23,8 +23,8 @@ class Main extends Component {
               <ul className="nav navbar-nav">
                 <li><Link to="/">Home</Link><span className="hover"></span></li>
                 <li><Link to="/news">News</Link><span className="hover"></span></li>
-                <li><Link to="/about">Portfolio</Link><span className="hover"></span></li>
-                <li><Link to="/contact">Contact</Link><span className="hover"></span></li>
+                <li><Link to="/portfolio">Portfolio</Link><span className="hover"></span></li>
+                <li><Link to="/about">About</Link><span className="hover"></span></li>
               </ul>
             </div>
           </div>

@@ -18,6 +18,7 @@ const history = useRouterHistory(createBrowserHistory)({
 import Main from './common/main.component.jsx';
 import Home from './common/home.component.jsx';
 import News from './common/news.component.jsx';
+import Portfolio from './common/portfolio.component.jsx';
 import About from './common/about.component.jsx';
 
 render(
@@ -25,8 +26,8 @@ render(
     <Route path='/' component={Main}>
       <IndexRoute component={Home}/>
       <Route path="/news" component={News}/>
+      <Route path="/portfolio" component={Portfolio}/>
       <Route path="/about" component={About}/>
-      <Route path="/contact"/>
     </Route>
   </Router>,
   document.getElementById('container')
