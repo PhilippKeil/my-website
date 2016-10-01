@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 // use ES6 classes for creation of react components
 // it's often done with React.createClass({}), but this is best practice.
@@ -15,14 +16,14 @@ class Main extends Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/">Philipp Keil</a>
+              <Link className="navbar-brand" to="/">Philipp Keil</Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><a href="/">Home</a><span className="hover"></span></li>
-                <li><a href="/news">News</a><span className="hover"></span></li>
-                <li><a href="/About">Portfolio</a><span className="hover"></span></li>
-                <li><a href="/Contact">Contact</a><span className="hover"></span></li>
+                <li><Link to="/">Home</Link><span className="hover"></span></li>
+                <li><Link to="/news">News</Link><span className="hover"></span></li>
+                <li><Link to="/About">Portfolio</Link><span className="hover"></span></li>
+                <li><Link to="/Contact">Contact</Link><span className="hover"></span></li>
               </ul>
             </div>
           </div>
