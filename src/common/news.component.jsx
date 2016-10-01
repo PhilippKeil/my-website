@@ -3,7 +3,9 @@ import React, {Component} from 'react';
 class News extends Component {
   render () {
     return (
-      <h1>News</h1>
+      <div id="content_page">
+        <h1>News</h1>
+      </div>
     );
   }
 }

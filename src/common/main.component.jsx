@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // use ES6 classes for creation of react components
 // it's often done with React.createClass({}), but this is best practice.
@@ -28,10 +29,21 @@ class Main extends Component {
             </div>
           </div>
         </nav>
-        <div className="container">
-          {/* children components are spawned here! */}
+        <ReactCSSTransitionGroup
+          component="div"
+          className="container"
+          transitionName="example"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          {React.cloneElement(this.props.children, {
+            key: location.pathname
+          })}
+        </ReactCSSTransitionGroup>
+        {/*<div className="container" id="content_container">
+          {// children components are spawned here! }
           {this.props.children}
-        </div>
+        </div>*/}
       </div>
     );
   }

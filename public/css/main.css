@@ -77,6 +77,33 @@ h1, h3, .navbar-brand{
   opacity:0;
 }
 
+/* PAGE TRANSITIONS with ReactCSSTransitionGroup */
+/* the first part of the class, before '*-enter' is provided in transitionName*/
+
+.example-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+}
+
+.example-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0;
+}
+
+#content_page {
+  position: absolute;
+}
+
+/* DONT KNOW WHAT THAT SHIT IS DOING
+
 @media (max-width: 767px) {
 .nav {
   padding-bottom:20px;
@@ -91,3 +118,4 @@ h1, h3, .navbar-brand{
     padding-bottom:20px;
   }
 }
+*/
