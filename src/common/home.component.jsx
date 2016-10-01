@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import * as ReactDOM from 'react-dom';
 
-var test = 0;
 class Home extends Component {
-  render(){
+  render() {
     return (
-      <div id="content_page">
+      <div className="container" id="content_page">
         <h1>Home</h1>
       </div>
     );

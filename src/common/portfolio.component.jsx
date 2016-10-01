@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
 class Portfolio extends Component {
-  render () {
+  render() {
     return (
-      <div id="content_page">
+      <div className="container" id="content_page">
         <h1>Portfolio</h1>
       </div>
     );

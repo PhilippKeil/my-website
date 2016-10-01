@@ -30,8 +30,6 @@ class Main extends Component {
           </div>
         </nav>
         <ReactCSSTransitionGroup
-          component="div"
-          className="container"
           transitionName="example"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}
