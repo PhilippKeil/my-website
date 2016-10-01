@@ -6,14 +6,6 @@ import { render } from 'react-dom';
 import {Router, Route, IndexRoute, useRouterHistory} from 'react-router';
 import {browserHistory as history} from 'react-router';
 
-/*
-// custom history for using custom basenames
-import {createBrowserHistory} from 'history';
-const history = useRouterHistory(createBrowserHistory)({
-  basename: '/'
-})
-*/
-
 // import react components
 import Main from './common/main.component.jsx';
 import Home from './common/home.component.jsx';
