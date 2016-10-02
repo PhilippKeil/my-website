@@ -103,20 +103,30 @@ h1, h3, .navbar-brand{
   position:absolute;
 }
 
-/* DONT KNOW WHAT THAT SHIT IS DOING
+/* STYLING of the Newsreader subpage */
 
-@media (max-width: 767px) {
-.nav {
-  padding-bottom:20px;
-  a{
-    padding:12px !important;
-  }
-}
+.panel.panel-default {
+  background-color: #222B31;
+  border-color: #222B31;
+  border-bottom: 4px solid #EE445F;
 }
 
-@media (max-width: 480px) {
-  .nav {
-    padding-bottom:20px;
-  }
+.panel-default>.panel-heading.article-title {
+  background-color: #222B31;
+  border-color: #EE445F;
+  border-bottom-width: 1px;
+  color: #FFF;
 }
-*/
+
+.panel-default>.panel-heading.article-title:hover {
+  background-color: #192226;
+}
+
+.panel-default .panel-body.article-body:hover {
+  background-color: #192226;
+}
+
+.panel-default>.article-a {
+  text-decoration: none;
+  color: #FFF;
+}

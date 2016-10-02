@@ -118,39 +118,19 @@ class Article extends Component {
   };
 
   render() {
-    var articleStyle = {
-      backgroundColor: (this.state.hover ? '#192226': '#222B31'),
-      borderColor: '#222B31',
-      borderBottom: '4px solid #EE445F'
-    };
-
-    var articleTitleStyle = {
-      backgroundColor: (this.state.hover ? '#192226': '#222B31'),
-      borderColor: '#EE445F',
-      borderBottomWidth: '1px',
-      color: '#FFF'
-    };
-
     var articleBodyStyle = {
+      // Inline Sytling for interactivity
       display: (this.props.articleId == this.props.activeArticle ? '': 'none'),
-    }
-
-    var articleAStyle = {
-      textDecoration: 'none',
-      color: '#FFF'
     }
     return (
       <div
       className="panel panel-default"
-      style={articleStyle}
       onMouseEnter={this.onHover}
       onMouseLeave={this.onHover}
       >
         <div
-        className="panel-heading"
-        onClick={this.onTitleClick}
-        style={articleTitleStyle}
-        >
+        className="panel-heading article-title"
+        onClick={this.onTitleClick}>
           <div className="row">
             <div className="col-sm-2 hidden-xs">
               <p className="text-left">
@@ -169,8 +149,8 @@ class Article extends Component {
             </div>
           </div>
         </div>
-        <a href={this.props.url} style={articleAStyle}>
-        <div className="panel-body" style={articleBodyStyle}>
+        <a href={this.props.url} className="article-a">
+        <div className="panel-body article-body" style={articleBodyStyle}>
             <h2>{this.props.title}</h2>
             <p>{this.props.body}</p>
         </div>
