@@ -53,7 +53,8 @@ class News extends Component {
     };
 
     return (
-      <div className="container" id="content_page">
+      <div id="page_absolute_wrapper">
+      <div className="container">
         <div className="row">
           <h1 className="text-center hidden-xs">
             Newsreader <small style={smallTextStyle}>A coding project by Philipp Keil</small>
@@ -81,6 +82,7 @@ class News extends Component {
           }, this)
         }
         </div>
+      </div>
       </div>
     );
   }
