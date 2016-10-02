@@ -1,33 +1,22 @@
 import React, {Component} from 'react';
+import casual from 'casual-browserify';
 
 class News extends Component {
   constructor(props) {
     super(props);
     // Temporary variable to fill the page with dummy articles
     // Later to be replaced by a database call
-    var articles = {
-      0: {
-        title: 'Hello World Title',
-        author: 'Philipp Keil',
-        pubDate: 'Yesterday',
-        body: 'Nam ut dictum tellus, ut tempus felis. Aenean posuere erat enim, eget vulputate neque tempor in. Fusce ornare aliquet placerat. Suspendisse tortor dolor, auctor in libero eu, ullamcorper sagittis dolor. Vestibulum lacinia, nisi id lobortis commodo, libero ipsum semper magna, et pellentesque sapien nunc at sapien. Donec vestibulum cursus lectus, nec placerat risus pharetra sed. Integer at tincidunt justo, a rutrum ex. Integer consequat vitae libero eu feugiat. Vivamus quis pellentesque leo, lacinia tempus urna. Nunc semper laoreet consequat. Vestibulum pretium gravida est, quis elementum arcu cursus eget.',
-        url: 'http://www.google.com'
-      },
-      1: {
-        title: 'Hello World Title',
-        author: 'Philipp Keil',
-        pubDate: 'Yesterday',
-        body: 'Nam ut dictum tellus, ut tempus felis. Aenean posuere erat enim, eget vulputate neque tempor in. Fusce ornare aliquet placerat. Suspendisse tortor dolor, auctor in libero eu, ullamcorper sagittis dolor. Vestibulum lacinia, nisi id lobortis commodo, libero ipsum semper magna, et pellentesque sapien nunc at sapien. Donec vestibulum cursus lectus, nec placerat risus pharetra sed. Integer at tincidunt justo, a rutrum ex. Integer consequat vitae libero eu feugiat. Vivamus quis pellentesque leo, lacinia tempus urna. Nunc semper laoreet consequat. Vestibulum pretium gravida est, quis elementum arcu cursus eget.',
-        url: 'http://www.google.com'
-      },
-      2: {
-        title: 'Hello World Title',
-        author: 'Philipp Keil',
-        pubDate: 'Yesterday',
-        body: 'Nam ut dictum tellus, ut tempus felis. Aenean posuere erat enim, eget vulputate neque tempor in. Fusce ornare aliquet placerat. Suspendisse tortor dolor, auctor in libero eu, ullamcorper sagittis dolor. Vestibulum lacinia, nisi id lobortis commodo, libero ipsum semper magna, et pellentesque sapien nunc at sapien. Donec vestibulum cursus lectus, nec placerat risus pharetra sed. Integer at tincidunt justo, a rutrum ex. Integer consequat vitae libero eu feugiat. Vivamus quis pellentesque leo, lacinia tempus urna. Nunc semper laoreet consequat. Vestibulum pretium gravida est, quis elementum arcu cursus eget.',
+    var articles = {}
+    var i;
+    for (i = 0; i < 100; i++) {
+      articles[i] = {
+        title: casual.title,
+        author: casual.full_name,
+        pubDate: casual.date,
+        body: casual.text,
         url: 'http://www.google.com'
       }
-    };
+    }
 
     // Sets the temporary list of articles as a state so it can later be
     // iterated upon and be manipulated

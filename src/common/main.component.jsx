@@ -30,6 +30,8 @@ class Main extends Component {
           </div>
         </nav>
         <ReactCSSTransitionGroup
+          component="div"
+          style={{position: 'relative'}}
           transitionName="example"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}
@@ -38,6 +40,11 @@ class Main extends Component {
             key: location.pathname
           })}
         </ReactCSSTransitionGroup>
+        <footer className="footer">
+          <div className="container">
+            <p className="text-muted">Place sticky footer content here.</p>
+          </div>
+        </footer>
       </div>
     );
   }

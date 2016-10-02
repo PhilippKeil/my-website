@@ -1,9 +1,14 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-color: #192226 !important;
   font-family: Lato, serif;
   font-size: 14px;
   color: #FFF !important;
-  padding-top: 50px; /* needed because navbar-fixed-top doesn't move container*/
+  padding-top: 50px; /* navbar-fixed-top doesn't move container*/
 }
 
 h1, h3, .navbar-brand{
@@ -18,8 +23,8 @@ h1>small {
 }
 
 .navbar-inverse {
-  background:#222B31 !important;
-  border-bottom:4px solid #EE445F !important;
+  background-color: #222B31;
+  border-bottom:4px solid #EE445F;
 }
 
 .navbar-inverse .navbar-brand {
@@ -145,7 +150,7 @@ h1>small {
   border-bottom: 4px solid #192226; /* subject to change */
   border-right: 4px solid #222B31;
   transition: background-color 300ms,
-              max-height 1000ms ease-in-out,
+              max-height 800ms ease-in-out,
               border-bottom 400ms ease-in-out 400ms; /* subject to change */
 }
 
@@ -156,4 +161,13 @@ h1>small {
 .panel-default .panel-body.article-body.expanded {
   max-height: 300;
   border-bottom: 4px solid #222B31; /* subject to change */
+}
+
+/* FOOTER STYLING */
+.footer {
+  position: relative;;
+  width: 100%;
+  height: 50px;
+  background-color: #222B31;
+  border-top:4px solid #EE445F;
 }

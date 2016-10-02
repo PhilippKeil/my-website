@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "casual-browserify": "^1.5.5",
     "express": "^4.14.0",
     "history": "^4.1.0",
     "react": "^15.3.2",
