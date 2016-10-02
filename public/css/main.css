@@ -82,7 +82,7 @@ h1>small {
   opacity:0;
 }
 
-/* PAGE TRANSITIONS with ReactCSSTransitionGroup */
+/* SUBPAGE TRANSITIONS with ReactCSSTransitionGroup */
 /* the first part of the class, before '*-enter' is provided in transitionName*/
 
 .example-enter {
@@ -112,26 +112,48 @@ h1>small {
 
 .panel.panel-default {
   background-color: #222B31;
-  border-color: #222B31;
-  border-bottom: 4px solid #EE445F;
+  border-radius: 0px;
+  border: 0px;
 }
 
 .panel-default>.panel-heading.article-title {
   background-color: #222B31;
-  border-color: #EE445F;
-  border-bottom-width: 1px;
+  border-left: 4px solid #222B31;
+  border-bottom: 4px solid #EE445F;
+  border-right: 4px solid #222B31;
+  border-top: 4px solid #222B31;
   color: #FFF;
 }
 
 .panel-default>.panel-heading.article-title:hover {
   background-color: #192226;
+  transition: background-color 300ms;
+}
+
+.panel-default .article-a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.panel-default .panel-body.article-body {
+  overflow-y: hidden;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: auto;
+  max-height: 0px;
+  border-left: 4px solid #222B31;
+  border-bottom: 4px solid #192226; /* subject to change */
+  border-right: 4px solid #222B31;
+  transition: background-color 300ms,
+              max-height 1000ms ease-in-out,
+              border-bottom 400ms ease-in-out 400ms; /* subject to change */
 }
 
 .panel-default .panel-body.article-body:hover {
   background-color: #192226;
 }
 
-.panel-default>.article-a {
-  text-decoration: none;
-  color: #FFF;
+.panel-default .panel-body.article-body.expanded {
+  max-height: 300;
+  border-bottom: 4px solid #222B31; /* subject to change */
 }

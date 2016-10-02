@@ -112,12 +112,17 @@ class Article extends Component {
 
   };
 
-  render() {
-    var articleBodyStyle = {
-      // Inline Sytling for interactivity
-      display: (this.props.articleId == this.props.activeArticle ? '': 'none'),
-    }
+  isActive() {
+    // Checks to see if the current article is active and sets classNames
+    // appends "expanded" if body should be visible. The animation is
+    // then handled by CSS transitions
+    return (
+      'panel-body article-body ' +
+      (this.props.articleId == this.props.activeArticle? 'expanded': '')
+    )
+  };
 
+  render() {
     return (
       <div
       className="panel panel-default"
@@ -145,12 +150,12 @@ class Article extends Component {
             </div>
           </div>
         </div>
-        <a href={this.props.url} className="article-a">
-        <div className="panel-body article-body" style={articleBodyStyle}>
+        <div className={this.isActive()}>
+          <a href={this.props.url} className="article-a">
             <h2>{this.props.title}</h2>
             <p>{this.props.body}</p>
+          </a>
         </div>
-        </a>
       </div>
     );
   }
