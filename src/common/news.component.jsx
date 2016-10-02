@@ -47,19 +47,14 @@ class News extends Component {
   };
 
   render() {
-    var smallTextStyle = {
-      textTransform: "none",
-      color: "#a3bfc6"
-    };
-
     return (
       <div id="page_absolute_wrapper">
       <div className="container">
         <div className="row">
-          <h1 className="text-center hidden-xs">
-            Newsreader <small style={smallTextStyle}>A coding project by Philipp Keil</small>
+          <h1 className="hidden-xs">
+            Newsreader <small>A coding project by Philipp Keil</small>
           </h1>
-          <h1 className="text-center visible-xs">Newsreader</h1>
+          <h1 className="visible-xs">Newsreader</h1>
         </div>
         <div className="row">
         {
@@ -122,6 +117,7 @@ class Article extends Component {
       // Inline Sytling for interactivity
       display: (this.props.articleId == this.props.activeArticle ? '': 'none'),
     }
+
     return (
       <div
       className="panel panel-default"

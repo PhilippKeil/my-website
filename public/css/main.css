@@ -12,6 +12,11 @@ h1, h3, .navbar-brand{
   font-weight: 900;
 }
 
+h1>small {
+  text-transform: none;
+  color: #a3bfc6;
+}
+
 .navbar-inverse {
   background:#222B31 !important;
   border-bottom:4px solid #EE445F !important;
