@@ -4,6 +4,49 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // use ES6 classes for creation of react components
 // it's often done with React.createClass({}), but this is best practice.
+class NavElement extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false
+    };
+    this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
+    this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
+  };
+
+  onMouseEnterHandler() {
+    console.log('enter!');
+    this.setState({
+      active: true
+    })
+  };
+
+  onMouseLeaveHandler() {
+    console.log('leave!');
+    this.setState({
+      active: false
+    })
+  };
+
+  setClasses() {
+    return (
+      'nav-animation-span ' +
+      (this.state.active? 'active': '')
+    );
+  };
+
+  render() {
+    return (
+      <li
+      onMouseEnter={this.onMouseEnterHandler}
+      onMouseLeave={this.onMouseLeaveHandler}>
+        <Link to={this.props.to}>{this.props.name}</Link>
+        <span className={this.setClasses()}></span>
+      </li>
+    );
+  };
+};
+
 class Main extends Component {
   render() {
     return (
@@ -21,14 +64,18 @@ class Main extends Component {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><Link to="/">Home</Link><span className="hover"></span></li>
-                <li><Link to="/news">News</Link><span className="hover"></span></li>
-                <li><Link to="/portfolio">Portfolio</Link><span className="hover"></span></li>
-                <li><Link to="/about">About</Link><span className="hover"></span></li>
+                <NavElement to="/" name="Home"/>
+                <NavElement to="/news" name="News"/>
+                <NavElement to="/portfolio" name="Portfolio"/>
+                <NavElement to="/about" name="About"/>
               </ul>
             </div>
           </div>
         </nav>
+        {
+          // Reqrite to new component using transitionend events for transition
+          // so I dont have to use position:absolute
+        }
         <ReactCSSTransitionGroup
           transitionName="example"
           transitionEnterTimeout={500}

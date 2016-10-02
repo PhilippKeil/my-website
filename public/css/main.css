@@ -70,16 +70,22 @@ h1>small {
   background:#a3bfc6 !important;
 }
 
-.nav span.hover {
-  display:block;
-  position:absolute;
-  width:0%;
-  height:100%;
-  top:0px;
-  left:0px;
-  background-color: #EE445F !important;
-  z-index:0;
-  opacity:0;
+.nav span.nav-animation-span {
+  display: block;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: #EE445F;
+  z-index: 0;
+  opacity: 0;
+  transition: width 300ms, opacity 300ms;
+}
+
+.nav span.nav-animation-span.active {
+  opacity: 1;
+  width: 100%;
 }
 
 /* SUBPAGE TRANSITIONS with ReactCSSTransitionGroup */
