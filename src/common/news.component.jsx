@@ -100,9 +100,13 @@ class Article extends Component {
   };
 
   onTitleClick(e) {
+    // If the panel-heading is clicked, it checks if the panel is already open
+    // (if the clicked article is already the active article anyways), and then
+    // sets the active article to either itself or it removes itself from being
+    // active.
     this.props.onTitleClick((this.props.articleId != this.props.activeArticle ?
-      this.props.articleId:
-      null
+      this.props.articleId: // set itself as active article
+      null // remove itself as active article
     ));
   };
 
