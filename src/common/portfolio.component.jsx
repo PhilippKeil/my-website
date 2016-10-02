@@ -5,7 +5,9 @@ class Portfolio extends Component {
     return (
       <div id="page_absolute_wrapper">
         <div className="container">
-          <h1>Portfolio</h1>
+          <div className="row">
+            <h1>Portfolio</h1>
+            </div>
         </div>
       </div>
     );

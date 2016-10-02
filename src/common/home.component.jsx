@@ -5,7 +5,9 @@ class Home extends Component {
     return (
       <div id="page_absolute_wrapper">
         <div className="container">
-          <h1>Home</h1>
+          <div className="row">
+            <h1>Home</h1>
+          </div>
         </div>
       </div>
     );
