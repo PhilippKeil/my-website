@@ -81,25 +81,26 @@ h1, h3, .navbar-brand{
 /* the first part of the class, before '*-enter' is provided in transitionName*/
 
 .example-enter {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
+  opacity: 0;
 }
 
 .example-enter.example-enter-active {
   opacity: 1;
+  transition: opacity 500ms ease-in;
 }
 
 .example-leave {
   opacity: 1;
-  transition: opacity .5s ease-in;
 }
 
 .example-leave.example-leave-active {
   opacity: 0;
+  transition: opacity 500ms ease-out;
 }
 
-#content_page {
-  position: absolute;
+#page_absolute_wrapper {
+  width:100%;
+  position:absolute;
 }
 
 /* DONT KNOW WHAT THAT SHIT IS DOING
